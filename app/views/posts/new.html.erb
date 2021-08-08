@@ -1,0 +1,52 @@
+<div class="d-flex align-items-center">
+  <h1>投稿</h1>
+  <div class="ml-auto posts_button">
+      <a class="btn btn-outline-info" href="/posts">投稿一覧</a>
+  </div>
+</div>
+<%= form_for @post do |f| %>
+    <div class="form-group">
+      <%= f.label :item, '落とし物' %>
+      <%= f.text_field :item, class: 'form-control' %>
+      <small id="item-tip" class="form-text text-muted">
+          イベント内容を入力してください
+      </small>
+  </div>
+
+  <div class="form-group">
+      <%= f.label :feature, '落とし物の特徴' %>
+      <%= f.text_field :feature, class: 'form-control' %>
+      <small id="feature-tip" class="form-text text-muted">
+          イベントを行う場所を入力してください。
+      </small>
+  </div>
+
+  <div class="form-group">
+      <%= f.label :location, '落とし物を見つけた場所' %>
+      <%= f.text_field :location, class: 'form-control' %>
+      <small id="location-tip" class="form-text text-muted">
+          イベントを行う時間を入力してください。
+      </small>
+  </div>
+
+  <div class="form-group">
+      <%= f.label :deliver, 'どこに届けたか' %>
+      <%= f.text_field :deliver, class: 'form-control' %>
+        <small id="deliver-tip" class="form-text text-muted">
+            イベントにかかる費用を入力してください。
+        </small>
+  </div>
+
+  <div class="form-group">
+      <%= f.label :name, '投稿者名' %>
+      <%= f.text_field :name, class: 'form-control' %>
+        <small id="name-tip" class="form-text text-muted">
+            あなたの名前を入力してください。
+        </small>
+  </div>
+
+  <%= f.submit '投稿', class: 'btn btn-info btn-block' %>
+  <small id="submit-tip" class="form-text text-muted">
+      投稿する前に投稿内容を見直してください!
+  </small>
+<% end %>
