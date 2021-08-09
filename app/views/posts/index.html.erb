@@ -11,16 +11,18 @@
       <th scope="col">場所</th>
       <th scope="col">投稿者</th>
       <th scope="col">投稿日</th>
-      <th scope="col">更新日時</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>渋谷ナイト</td>
-      <td>渋谷区第一小学校</td>
-      <td>鈴木</td>
-      <td>2021/08/01</td>
-      <td>2021/08/01</td>
-    </tr>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.location %></td>
+        <td><%= post.name %></td>
+        <td><%= post.date %></td>
+        <td><%= post.created_at %></td>
+        <td><%= post.updated_at %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
