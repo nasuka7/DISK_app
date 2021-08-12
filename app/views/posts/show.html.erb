@@ -1,0 +1,25 @@
+<div class="d-flex align-items-center mt-4 mb-4">
+    <div class="ml-auto posts_button">
+        <a class="btn btn-outline-info" href="/posts" role="button">募集一覧</a>
+        <a class="btn btn-outline-info" href="/posts" role="button">編集</a>
+    </div>
+</div>
+
+<div class="card">
+  <div class="card-header bg-info text-white">
+    <h4><%= @post.item %></h4>
+  </div>
+  
+  <div class="card-body">
+    <p class="card-text"><%= simple_format(@post.title) %></p>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><%= simple_format(@post.location) %></p>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><%= simple_format(@post.name) %></p>
+  </div>
+  <div class="card-footer">
+    <p class="text-right font-weight-bold mr-10"><%= @post.date %></p>
+  </div>
+</div>
