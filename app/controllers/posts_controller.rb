@@ -8,7 +8,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
+    post = Post.create(post_params)
+    redirect_to post
   end
 
   def show
@@ -23,7 +24,13 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.update(post_params)
     redirect_to post
-end
+  end
+
+  def destroy
+    post = Post.find(params[:id])
+    post.delete
+    redirect_to posts_path
+  end
 
   private
 
